@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
+.card-size {
+  height: 700px;
+  border: none;
+  background-color: #f6f8fc;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* @media (max-width:768px) {
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .card-size {
+    height: 200px;
   }
+
+} */
+
+.side-menu:hover {
+  cursor: pointer;
+  background-color: #dfdcdc
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.contactPage {
+  background-color: #d4e2fe;
 }
 
-.App-link {
-  color: #61dafb;
+.alertBox {
+  width: 500px;
+  height: auto;
+  margin: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.createContact {
+  width: 500px;
+  margin: auto;
+}
+
+.contactListBody {
+  width: 550px;
+  margin: auto;
+  padding-left: 17px;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+@media (max-width:768px) {
+
+  .contactCard {
+    width: 300px;
+
   }
-  to {
-    transform: rotate(360deg);
+
+  .contactListBody {
+    width: 320px;
+    display: grid;
+    grid-template-columns: auto;
   }
+
+}
+
+.contactCard {
+  width: 250px;
+  margin: 10px;
+}
+
+.chart {
+  padding-left: 100px;
+}
+
+.chartSize {
+  width: 600px;
+  height: 500px;
 }

@@ -1,23 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from "react-router-dom"
+import Contact from './components/Contact';
+import Chart from './components/Chart';
+import ContactPage from './components/ContactPage';
+// import CreateContact from './components/CreateContact';
+// import EditContactPage from './components/EditContactPage';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route index element={<Contact />}></Route>
+        <Route path="/*" element={<Contact />}></Route>
+        <Route path="/chart" element={<Chart />}></Route>
+        <Route path="/contactpage" element={<ContactPage />}></Route>
+        {/* <Route path="/createcontact" element={<CreateContact />}></Route>
+        <Route path="/editcontact" element={<EditContactPage />}></Route> */}
+      </Routes>
+
     </div>
   );
 }
