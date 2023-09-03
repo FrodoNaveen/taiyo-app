@@ -16,11 +16,6 @@ const ContactPage = () => {
         setContactList(newData)
     }, [])
 
-    console.log("contactlist", contactList)
-
-
-
-
     function createNewContact(index) {
         setCreateContact(true)
         setIndexNum(index)
