@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 
 
@@ -36,10 +36,10 @@ const Chart = () => {
 
 
     return (
-        <div class="container">
-            <h1 class="text-center">Covidcases</h1>
-            <div class="card mt-5">
-                <div class="card-body">
+        <div className="container">
+            <h1 className="text-center">Covidcases</h1>
+            <div className="card mt-5">
+                <div className="card-body">
                     <div className="chart">
                         <AreaChart
                             width={600}

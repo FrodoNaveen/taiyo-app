@@ -41,43 +41,43 @@ const ContactPage = () => {
         <div>
             {createContact ? <CreateContact /> : <div>
                 {contactList.length >= 1 ? isContactEditable ? <EditContactPage index={indexNum} /> :
-                    <div class="mt-5 text-center">
-                        <button class="btn btn-primary mb-5" onClick={createNewContact}><b>Create Contact</b></button>
-                        <div class="card contactListBody">
+                    <div className="mt-5 text-center">
+                        <button className="btn btn-primary mb-5" onClick={createNewContact}><b>Create Contact</b></button>
+                        <div className="card contactListBody">
                             {contactList.map((ele, index) => (
-                                <div class="row">
-                                    <div class="card contactCard" key={index}>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-6">
+                                <div className="row" key={index}>
+                                    <div className="card contactCard">
+                                        <div className="card-body">
+                                            <div className="row">
+                                                <div className="col-6">
                                                     <b>Firstname:</b>
                                                 </div>
-                                                <div class="col-6 text-start">
+                                                <div className="col-6 text-start">
                                                     {ele.firstName}
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-6">
+                                            <div className="row">
+                                                <div className="col-6">
                                                     <b>LastName:</b>
                                                 </div>
-                                                <div class="col-6 text-start">
+                                                <div className="col-6 text-start">
                                                     {ele.lastName}
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-6">
+                                            <div className="row">
+                                                <div className="col-6">
                                                     <b>Status:</b>
                                                 </div>
-                                                <div class="col-6 text-start">
+                                                <div className="col-6 text-start">
                                                     {ele.status}
                                                 </div>
                                             </div>
-                                            <div class="row mt-2">
-                                                <div class="col-6">
-                                                    <button class="btn btn-outline-success w-100" onClick={() => editContact(index)}>Edit</button>
+                                            <div className="row mt-2">
+                                                <div className="col-6">
+                                                    <button className="btn btn-outline-success w-100" onClick={() => editContact(index)}>Edit</button>
                                                 </div>
-                                                <div class="col-6">
-                                                    <button class="btn btn-outline-danger w-100" onClick={() => deleteContact(ele.firstName)}>Delete</button>
+                                                <div className="col-6">
+                                                    <button className="btn btn-outline-danger w-100" onClick={() => deleteContact(ele.firstName)}>Delete</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -87,16 +87,16 @@ const ContactPage = () => {
                         </div>
                     </div>
                     :
-                    <div class="mt-5 text-center">
+                    <div className="mt-5 text-center">
 
                         {/* Create newContact button  */}
 
-                        <button class="btn btn-primary mb-5" onClick={createNewContact}><b>Create Contact</b></button>
-                        <div class="p-5 alertBox">
-                            <div class="text-start">
-                                <div class="alert alert-warning alert-dismissible fade show">
+                        <button className="btn btn-primary mb-5" onClick={createNewContact}><b>Create Contact</b></button>
+                        <div className="p-5 alertBox">
+                            <div className="text-start">
+                                <div className="alert alert-warning alert-dismissible fade show">
                                     <p>No Contact Found Please add contact from Create Contact button.</p>
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
                             </div>
                         </div>

@@ -9,8 +9,7 @@ const EditContactPage = ({ index }) => {
 
     useEffect(() => {
         setSaveEdittedContact(false)
-        console.log(index)
-    }, [])
+    }, [index])
 
     useEffect(() => {
 
@@ -22,7 +21,7 @@ const EditContactPage = ({ index }) => {
         let newData = data[index]
         setSavedContact(newData)
 
-    }, [])
+    }, [index])
 
     useEffect(() => {
         console.log(savedContact)
@@ -45,7 +44,6 @@ const EditContactPage = ({ index }) => {
 
         setSaveEdittedContact(true)
         let data = JSON.parse(localStorage.getItem("contacts"))
-        console.log(data)
         data[index] = savedContact
         let newData = JSON.stringify(data)
         localStorage.setItem("contacts", newData)
@@ -57,19 +55,19 @@ const EditContactPage = ({ index }) => {
         <div>
             {saveEdittedContact ? <ContactPage /> :
                 <div>
-                    <h1 class="text-center mt-5">Edit Contact Page</h1>
-                    <div class="card createContact mt-5">
-                        <div class="card-body">
+                    <h1 className="text-center mt-5">Edit Contact Page</h1>
+                    <div className="card createContact mt-5">
+                        <div className="card-body">
                             <form onSubmit={handleSubmit}>
-                                <div class="row mb-3">
-                                    <div class="col-3">
-                                        <label class="w-100 mt-1"><h5>FirstName:</h5></label>
+                                <div className="row mb-3">
+                                    <div className="col-3">
+                                        <label className="w-100 mt-1"><h5>FirstName:</h5></label>
                                     </div>
-                                    <div class="col-9">
+                                    <div className="col-9">
                                         <input
                                             name="firstName"
                                             type="text"
-                                            class="form-control"
+                                            className="form-control"
                                             placeholder="FirstName"
                                             onChange={handleChange}
                                             value={savedContact.firstName}
@@ -77,15 +75,15 @@ const EditContactPage = ({ index }) => {
                                             required />
                                     </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <div class="col-3">
-                                        <label class="w-100 mt-1"><h5>LastName:</h5></label>
+                                <div className="row mb-3">
+                                    <div className="col-3">
+                                        <label className="w-100 mt-1"><h5>LastName:</h5></label>
                                     </div>
-                                    <div class="col-9">
+                                    <div className="col-9">
                                         <input
                                             name="lastName"
                                             type="text"
-                                            class="form-control"
+                                            className="form-control"
                                             placeholder="LastName"
                                             onChange={handleChange}
                                             value={savedContact.lastName}
@@ -93,11 +91,11 @@ const EditContactPage = ({ index }) => {
                                             required />
                                     </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <div class="col-3">
-                                        <label class="w-100 mt-1 text-center"><h5>Status:</h5></label>
+                                <div className="row mb-3">
+                                    <div className="col-3">
+                                        <label className="w-100 mt-1 text-center"><h5>Status:</h5></label>
                                     </div>
-                                    <div class="col-9">
+                                    <div className="col-9">
                                         {savedContact.status === "Active" ?
                                             <div>
                                                 <div>
@@ -146,7 +144,7 @@ const EditContactPage = ({ index }) => {
                                     </div>
                                 </div>
                                 <div>
-                                    <button class="btn btn-success w-100">Save Editted Contact</button>
+                                    <button className="btn btn-success w-100">Save Editted Contact</button>
                                 </div>
 
                             </form>

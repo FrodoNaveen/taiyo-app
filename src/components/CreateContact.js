@@ -1,4 +1,4 @@
-import React, { useState, useMemo, memo, useEffect } from "react"
+import React, { useState, memo, useEffect } from "react"
 
 const CreateContact = () => {
 
@@ -59,20 +59,20 @@ const CreateContact = () => {
     return (
         <div>
 
-            <div class="conatiner mt-5">
-                <h1 class="text-center">CreateNewContact</h1>
-                <div class="card createContact mt-5">
-                    <div class="card-body">
+            <div className="conatiner mt-5">
+                <h1 className="text-center">CreateNewContact</h1>
+                <div className="card createContact mt-5">
+                    <div className="card-body">
                         <form onSubmit={formSubmit}>
-                            <div class="row mb-3">
-                                <div class="col-3">
-                                    <label class="w-100 mt-1"><h5>FirstName:</h5></label>
+                            <div className="row mb-3">
+                                <div className="col-3">
+                                    <label className="w-100 mt-1"><h5>FirstName:</h5></label>
                                 </div>
-                                <div class="col-9">
+                                <div className="col-9">
                                     <input
                                         name="firstName"
                                         type="text"
-                                        class="form-control"
+                                        className="form-control"
                                         placeholder="FirstName"
                                         onChange={handleChange}
                                         value={formData.firstName}
@@ -80,15 +80,15 @@ const CreateContact = () => {
                                         required />
                                 </div>
                             </div>
-                            <div class="row mb-3">
-                                <div class="col-3">
-                                    <label class="w-100 mt-1"><h5>LastName:</h5></label>
+                            <div className="row mb-3">
+                                <div className="col-3">
+                                    <label className="w-100 mt-1"><h5>LastName:</h5></label>
                                 </div>
-                                <div class="col-9">
+                                <div className="col-9">
                                     <input
                                         name="lastName"
                                         type="text"
-                                        class="form-control"
+                                        className="form-control"
                                         placeholder="LastName"
                                         onChange={handleChange}
                                         value={formData.lastName}
@@ -96,11 +96,11 @@ const CreateContact = () => {
                                         required />
                                 </div>
                             </div>
-                            <div class="row mb-3">
-                                <div class="col-3">
-                                    <label class="w-100 mt-1 text-center"><h5>Status:</h5></label>
+                            <div className="row mb-3">
+                                <div className="col-3">
+                                    <label className="w-100 mt-1 text-center"><h5>Status:</h5></label>
                                 </div>
-                                <div class="col-9">
+                                <div className="col-9">
                                     <div>
                                         <span>
                                             <input
@@ -123,7 +123,7 @@ const CreateContact = () => {
                                 </div>
                             </div>
                             <div>
-                                <button class="btn btn-success w-100">Save Contact</button>
+                                <button className="btn btn-success w-100">Save Contact</button>
                             </div>
                         </form>
                     </div>
