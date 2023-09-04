@@ -35,7 +35,7 @@ const ContactPage = () => {
         setIndexNum(index)
     }
 
-    console.log(indexNum)
+
 
     return (
         <div>
