@@ -8,6 +8,7 @@ const ContactPage = () => {
     const [createContact, setCreateContact] = useState(false)
     const [isContactEditable, setIsContactEditable] = useState(false)
     const [indexNum, setIndexNum] = useState()
+    // const [contactListLength, setContactListLength] = useState()
 
     useEffect(() => {
         setCreateContact(false)
@@ -16,7 +17,14 @@ const ContactPage = () => {
         setContactList(newData)
     }, [])
 
-    console.log(contactList.length)
+    // useEffect(() => {
+
+    //     if (contactList.length >= 1) {
+    //         setContactListLength(true)
+    //     } else {
+    //         setContactListLength(false)
+    //     }
+    // }, [contactList])
 
     function createNewContact(index) {
         setCreateContact(true)
@@ -25,11 +33,16 @@ const ContactPage = () => {
 
     function deleteContact(id) {
         let newData = JSON.parse(localStorage.getItem("contacts"))
-        let deleteContact = newData.filter((ele) => {
-            return ele.firstName !== id
-        })
-        setContactList(deleteContact)
-        localStorage.setItem("contacts", JSON.stringify(deleteContact))
+        if (newData.length > 1) {
+            let deleteContact = newData.filter((ele) => {
+                return ele.firstName !== id
+            })
+            setContactList(deleteContact)
+            localStorage.setItem("contacts", JSON.stringify(deleteContact))
+        } else {
+            localStorage.removeItem("contacts")
+        }
+
     }
 
     function editContact(index) {
@@ -42,50 +55,52 @@ const ContactPage = () => {
     return (
         <div>
             {createContact ? <CreateContact /> : <div>
-                {contactList.length ? isContactEditable ? <EditContactPage index={indexNum} /> :
-                    <div className="mt-5 text-center">
-                        <button className="btn btn-primary mb-5" onClick={createNewContact}><b>Create Contact</b></button>
-                        <div className="card contactListBody">
-                            {contactList.map((ele, index) => (
-                                <div className="row" key={index}>
-                                    <div className="card contactCard">
-                                        <div className="card-body">
-                                            <div className="row">
-                                                <div className="col-6">
-                                                    <b>Firstname:</b>
+                {contactList ? isContactEditable ? <EditContactPage index={indexNum} /> :
+                    <div>
+                        <div className="mt-5 text-center">
+                            <button className="btn btn-primary mb-5" onClick={createNewContact}><b>Create Contact</b></button>
+                            <div className="card contactListBody">
+                                {contactList.map((ele, index) => (
+                                    <div className="row" key={index}>
+                                        <div className="card contactCard">
+                                            <div className="card-body">
+                                                <div className="row">
+                                                    <div className="col-6">
+                                                        <b>Firstname:</b>
+                                                    </div>
+                                                    <div className="col-6 text-start">
+                                                        {ele.firstName}
+                                                    </div>
                                                 </div>
-                                                <div className="col-6 text-start">
-                                                    {ele.firstName}
+                                                <div className="row">
+                                                    <div className="col-6">
+                                                        <b>LastName:</b>
+                                                    </div>
+                                                    <div className="col-6 text-start">
+                                                        {ele.lastName}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className="row">
-                                                <div className="col-6">
-                                                    <b>LastName:</b>
+                                                <div className="row">
+                                                    <div className="col-6">
+                                                        <b>Status:</b>
+                                                    </div>
+                                                    <div className="col-6 text-start">
+                                                        {ele.status}
+                                                    </div>
                                                 </div>
-                                                <div className="col-6 text-start">
-                                                    {ele.lastName}
-                                                </div>
-                                            </div>
-                                            <div className="row">
-                                                <div className="col-6">
-                                                    <b>Status:</b>
-                                                </div>
-                                                <div className="col-6 text-start">
-                                                    {ele.status}
-                                                </div>
-                                            </div>
-                                            <div className="row mt-2">
-                                                <div className="col-6">
-                                                    <button className="btn btn-outline-success w-100" onClick={() => editContact(index)}>Edit</button>
-                                                </div>
-                                                <div className="col-6">
-                                                    <button className="btn btn-outline-danger w-100" onClick={() => deleteContact(ele.firstName)}>Delete</button>
+                                                <div className="row mt-2">
+                                                    <div className="col-6">
+                                                        <button className="btn btn-outline-success w-100" onClick={() => editContact(index)}>Edit</button>
+                                                    </div>
+                                                    <div className="col-6">
+                                                        <button className="btn btn-outline-danger w-100" onClick={() => deleteContact(ele.firstName)}>Delete</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
                     :
