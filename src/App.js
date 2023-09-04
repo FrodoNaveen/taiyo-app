@@ -1,6 +1,6 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/js/bootstrap.bundle.min';
 // import $ from 'jquery';
 // import Popper from 'popper.js';
 import { Routes, Route } from "react-router-dom"
