@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/taiyo-app/static/css/main.38af1d93.css",
-    "main.js": "/taiyo-app/static/js/main.6ab5f284.js",
-    "static/js/787.1cbf14c2.chunk.js": "/taiyo-app/static/js/787.1cbf14c2.chunk.js",
-    "static/media/logo.svg": "/taiyo-app/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/taiyo-app/index.html",
-    "main.38af1d93.css.map": "/taiyo-app/static/css/main.38af1d93.css.map",
-    "main.6ab5f284.js.map": "/taiyo-app/static/js/main.6ab5f284.js.map",
-    "787.1cbf14c2.chunk.js.map": "/taiyo-app/static/js/787.1cbf14c2.chunk.js.map"
+    "main.css": "/static/css/main.38af1d93.css",
+    "main.js": "/static/js/main.f9990156.js",
+    "static/js/787.1cbf14c2.chunk.js": "/static/js/787.1cbf14c2.chunk.js",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "main.38af1d93.css.map": "/static/css/main.38af1d93.css.map",
+    "main.f9990156.js.map": "/static/js/main.f9990156.js.map",
+    "787.1cbf14c2.chunk.js.map": "/static/js/787.1cbf14c2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.38af1d93.css",
-    "static/js/main.6ab5f284.js"
+    "static/js/main.f9990156.js"
   ]
 }
