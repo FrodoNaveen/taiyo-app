@@ -4,8 +4,8 @@ import { Routes, Route } from "react-router-dom"
 import Contact from './components/Contact';
 import Chart from './components/Chart';
 import ContactPage from './components/ContactPage';
-// import CreateContact from './components/CreateContact';
-// import EditContactPage from './components/EditContactPage';
+import CreateContact from './components/CreateContact';
+import EditContactPage from './components/EditContactPage';
 
 
 function App() {
@@ -16,8 +16,8 @@ function App() {
         <Route path="/*" element={<Contact />}></Route>
         <Route path="/chart" element={<Chart />}></Route>
         <Route path="/contactpage" element={<ContactPage />}></Route>
-        {/* <Route path="/createcontact" element={<CreateContact />}></Route>
-        <Route path="/editcontact" element={<EditContactPage />}></Route> */}
+        <Route path="/createcontact" element={<CreateContact />}></Route>
+        <Route path="/editcontact" element={<EditContactPage />}></Route>
       </Routes>
 
     </div>
