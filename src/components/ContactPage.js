@@ -16,6 +16,8 @@ const ContactPage = () => {
         setContactList(newData)
     }, [])
 
+    console.log(contactList.length)
+
     function createNewContact(index) {
         setCreateContact(true)
         setIndexNum(index)
@@ -40,7 +42,7 @@ const ContactPage = () => {
     return (
         <div>
             {createContact ? <CreateContact /> : <div>
-                {contactList.length >= 1 ? isContactEditable ? <EditContactPage index={indexNum} /> :
+                {contactList.length ? isContactEditable ? <EditContactPage index={indexNum} /> :
                     <div className="mt-5 text-center">
                         <button className="btn btn-primary mb-5" onClick={createNewContact}><b>Create Contact</b></button>
                         <div className="card contactListBody">
